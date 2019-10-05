@@ -1,0 +1,97 @@
+@import url('bootstrap.css');
+
+@import 'variables';
+@import 'colors';
+
+body{
+    font-size: $texte;
+    @media screen and (min-width:768px) {
+        font-size: $texte * 1.4;
+    }
+    @media screen and (min-width:1200px) {
+        font-size: $texte * 1.6;
+    }
+}
+
+@each $nom, $breakpoint in $grille {
+    @media screen and (min-width: $breakpoint) {
+        .container{
+            width: $breakpoint * 0.8;
+        }
+    }
+}
+
+#cadre{
+    border: $bordure;
+    font-size: $texte;
+}
+
+#texte{
+    font-size: $texte * 2;
+    span{
+        font-weight: bold;
+        a{
+            text-decoration: none;
+            &:hover{
+                color: $primaire;
+            }
+        }
+    }
+}
+
+// Mixins
+@mixin carre($cote) {
+    width: $cote;
+    height: $cote;
+}
+@mixin transform($propriete) {
+    -webkit-transform: $propriete;
+    -ms-transform: $propriete;
+    transform: $propriete;
+}
+#carre1{
+    @include carre(200px);
+    background-color: red;
+    @include transform(translate(300px));
+}
+
+#carre2{
+    @include carre(300px);
+    background-color: green;
+}
+
+#carre3{
+    @include carre(500px);
+    background-color: blue;
+}
+
+%centrer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#carre1{
+    position: relative;
+    background-color: red;
+    @include carre(500px);
+}
+#carre2{
+    background-color: #008000;
+    @include carre(250px);
+    @extend %centrer;
+}
+
+#carre3{
+    position: relative;
+    background-color: blue;
+    @include carre(800px);
+}
+
+#carre4{
+    background-color: green;
+    @include carre(350px);
+    @extend %centrer;
+}
+
