@@ -3,4 +3,4 @@ Fichiers correspondant au Live Coding du 5 octobre 2019 sur Sass (https://www.yo
 
 ## Outils utilisés
 - Visual Studio Code (https://code.visualstudio.com)
-- Live Sass Compiler, extesion à Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)
+- Live Sass Compiler, extension de Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass)
